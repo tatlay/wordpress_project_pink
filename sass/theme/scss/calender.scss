@@ -1,0 +1,71 @@
+.carousel {
+    margin-bottom: 0;
+    padding: 0 40px 30px 40px;
+}
+/* The controlsy */
+.carousel-control {
+    left: -12px;
+    height: 40px;
+    width: 40px;
+    background: none repeat scroll 0 0 #222222;
+    border: 4px solid #FFFFFF;
+    border-radius: 23px 23px 23px 23px;
+    margin-top: 90px;
+}
+.carousel-control.right {
+    right: -12px;
+}
+/* The indicators */
+.carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: -10px;
+    margin-right: -19px;
+}
+/* The colour of the indicators */
+.carousel-indicators li {
+    background: #cecece;
+}
+.carousel-indicators .active {
+background: #428bca;
+}
+
+
+.calender{
+    grid-area: calender;
+}
+
+.calenderTitle{
+color: #642d8c;
+    font-size: 57px;
+    position: relative;
+    left: 150px;
+    
+}
+
+h1.largeCalender{
+    font-size: 67px;
+    color: #642d8c;
+    position: relative;
+    float: left;
+    left: 19px;
+}
+
+h3 {
+    margin-top: 81px;
+    position: relative;
+    left: 20px;
+}
+
+time{
+    color: #642d8c;
+    position: relative;
+    left: 32px;
+}
+
+.purpleCircle{
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: #642d8c;
+}

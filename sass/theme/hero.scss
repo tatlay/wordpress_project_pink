@@ -1,0 +1,55 @@
+.pinkHeader{
+	background-color: $pink;
+	opacity: 0.5;
+	grid-area: pinkHeader;
+	z-index: 1;
+	color: white;
+	text-align: center;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 45px;
+
+}
+
+.hero{
+
+
+	//background: center 100% / 15% 60% repeat-x url("../images/hero.jpg");
+
+	//background: no-repeat url("../images/hero.jpg");
+
+	background: no-repeat center/100% url("../images/hero.jpg");
+	background-color: black;
+	grid-area: hero;
+    position: relative;
+    top: -45px;
+   	color: white;
+	text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.exploreText{
+	color: white;
+	position: relative;
+	top: 270px;
+
+}
+
+.pinkTopText{
+	position: relative;
+	top: 10px;
+    left: -175px;
+	z-index: 1;
+}
+
+.heroMessage{
+	color: white;
+	position: relative;
+	top: 280px;
+
+}
