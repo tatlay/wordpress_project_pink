@@ -28,26 +28,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="site-info">
 
-<!--             shortcode for calender plugin -->
-           
-           <article class="news">
-
-    <h1 class="newsTitle">News</h1>
-            <?php echo do_shortcode('[wonderplugin_carousel id="1"]'); ?>
-  </article>
-
-
-<div class="pink_twitter_container">
-
-
-  <div class="carousel-inner">
-<!-- shortcode for twitter feed -->
-<?php echo do_shortcode("[rotatingtweets screen_name='@develop_me_uk']"); ?>
-
-      
-        </div>
-    </div>
-</div><!--.container-->
 
 
 
