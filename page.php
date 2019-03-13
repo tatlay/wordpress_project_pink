@@ -9,35 +9,6 @@
  *
  * @package understrap
  */
-//the loop declarations
-$query_args = array(
-	'category_name' => 'news',
-	'post_type' => 'post',
-	'posts_per_page' => 3,
-	'paged' => 1,
-);
-
-$result = new WP_Query( $query_args );
-
-$query_args1 = array(
-	'category_name' => 'news',
-	'post_type' => 'post',
-	'posts_per_page' => 3,
-	'paged' => 2,
-);
-
-$result1 = new WP_Query( $query_args1 );
-
-$query_args2 = array(
-	'category_name' => 'news',
-	'post_type' => 'post',
-	'posts_per_page' => 3,
-	'paged' => 3,
-);
-
-$result2 = new WP_Query( $query_args2 );
-
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -46,8 +17,18 @@ get_header();
 
 $container = get_theme_mod( 'understrap_container_type' );
 
-?>
+for ($i = 1; $i <= 4; $i++)
+{
+	$activeState = '';
 
+	if ($i < 2)
+	{
+		$activeState .= 'active';
+	}
+
+	echo $activeState . "\n";
+}
+?>
 <div class="wrapper" id="page-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
@@ -73,9 +54,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php endwhile; // end of the loop. ?>
 
 			</main><!-- #main -->
+<!-- news article -->
 
 <article class="news">
-
 
     <h1 class="newsTitle">News</h1>
   
@@ -92,89 +73,42 @@ $container = get_theme_mod( 'understrap_container_type' );
                   </ol>
                    
                   <!-- Carousel items -->
-                <div class="carousel-inner">
-                	<div class="item active">
-                      	<div class="row">
-						<?php
-						if ( $result->have_posts()){
-							while ( $result->have_posts() ) : $result->the_post(); ?>
-					     	<div class="col-md-4">
-	                        		<a href="#" class="thumbnail">
-										<?php the_post_thumbnail( 'thumbnail' );?>
-										<p class="newsContent">
-		                        		<?php the_title();?> 
-				                        </p>
-				                    </a>
-			                </div>
-	            			<?php endwhile;
-							wp_reset_query();
-							}
+                  <div class="carousel-inner">
+                  <?php
+					for ($i = 1; $i <= 4; $i++)
+					{
+						$activeState = '';
+
+						if ($i < 2)
+						{
+							$activeState .= 'active';
+						}
+
 						?>
-		            </div>
-		        </div>    
-				
-		        <div class="item">
+                	  	<div class="item <?php echo $activeState?>">
                       <div class="row">
-						<?php
-						if ( $result2->have_posts()){
-							while ( $result2->have_posts() ) : $result2->the_post(); ?>
-					     	<div class="col-md-4">
-	                        		<a href="#" class="thumbnail">
-										<?php the_post_thumbnail( 'thumbnail' );?>
-										<p class="newsContent">
-		                        		<?php the_title();?> 
-				                        </p>
-				                    </a>
-			                </div>
-	            			<?php endwhile;
-							wp_reset_query();
-							}
-						?>
-		            </div>
-                  </div><!--.item-->
+                        <div class="col-md-4"><a href="#" class="thumbnail"><img src="images/michelle.png" alt="Michelle Obama and students" style="max-width:100%;"><p class="posted">Post on: 06/01/2017</p><p class="newsContent">
+                        Michelle Obama's 'amazing' impact on British schoolgirls  
+
+                        </p></a></div>
+                        <div class="col-md-4">
+
+                       <a href="#" class="thumbnail"><img src="images/michelle.png" alt="Michelle Obama and students" style="max-width:100%;"><p class="posted">Post on: 06/01/2017</p><p class="newsContent">
+                        Michelle Obama's 'amazing' impact on British schoolgirls  
+
+                        </p></a></div>
+                        <div class="col-md-4"><a href="#" class="thumbnail"><img src="images/michelle.png" alt="Michelle Obama and students" style="max-width:100%;"><p class="posted">Post on: 06/01/2017</p><p class="newsContent">
+                        Michelle Obama's 'amazing' impact on British schoolgirls  
+
+                        </p></a></div>
+    
+                      </div><!--.row-->
+                		</div><!--.item-->
+   						<?php	                
+					}
+                  ?>    
+                  
                    
-                  <div class="item">
-                      <div class="row">
-						<?php
-						if ( $result1->have_posts()){
-							while ( $result1->have_posts() ) : $result1->the_post(); ?>
-					     	<div class="col-md-4">
-	                        		<a href="#" class="thumbnail">
-										<?php the_post_thumbnail( 'thumbnail' );?>
-										<p class="newsContent">
-		                        		<?php the_title();?> 
-				                        </p>
-				                    </a>
-			                </div>
-	            			<?php endwhile;
-							wp_reset_query();
-							}
-						?>
-		            </div>
-                  </div><!--.item-->
-
-                                  <div class="item">
-                      <div class="row">
-						<?php
-						if ( $result->have_posts()){
-							while ( $result->have_posts() ) : $result->the_post(); ?>
-					     	<div class="col-md-4">
-	                        		<a href="#" class="thumbnail">
-										<?php the_post_thumbnail( 'thumbnail' );?>
-										<p class="newsContent">
-		                        		<?php the_title();?> 
-				                        </p>
-				                    </a>
-			                </div>
-	            			<?php endwhile;
-							wp_reset_query();
-							}
-						?>
-		            </div>
-                  </div><!--.item-->
-
-
-
                   </div><!--.carousel-inner-->
                     <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
                     <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
@@ -184,13 +118,13 @@ $container = get_theme_mod( 'understrap_container_type' );
       </div>
   </div><!--.container-->  
   
-  </article>
-<!-- start test -->
-		<article class="news">
-		
+</article>
+
+
+<article class="calender">
 		
 
-		</article>
+</article>
 <!-- end test -->
 			<!-- News Carousel -->					<!-- Calender Carousel -->
 			<!-- Twitter  Carousel -->
@@ -211,7 +145,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     })
   });
 
-  </script>
+</script>
 
 </div><!-- #page-wrapper -->
 
