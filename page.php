@@ -12,23 +12,10 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-
 get_header();
-
 $container = get_theme_mod( 'understrap_container_type' );
-
-for ($i = 1; $i <= 4; $i++)
-{
-	$activeState = '';
-
-	if ($i < 2)
-	{
-		$activeState .= 'active';
-	}
-
-	echo $activeState . "\n";
-}
 ?>
+
 <div class="wrapper" id="page-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
@@ -54,76 +41,31 @@ for ($i = 1; $i <= 4; $i++)
 				<?php endwhile; // end of the loop. ?>
 
 			</main><!-- #main -->
-<!-- news article -->
-
-<article class="news">
-
-    <h1 class="newsTitle">News</h1>
-  
-    <div class="container">
-      <div class="row">
-          <div class="col-md-12">
-                  <div id="Carousel" class="carousel slide">
-                   
-                  <ol class="carousel-indicators">
-                      <li data-target="#Carousel" data-slide-to="0" class="active"></li>
-                      <li data-target="#Carousel" data-slide-to="1"></li>
-                      <li data-target="#Carousel" data-slide-to="2"></li>
-                      <li data-target="#Carousel" data-slide-to="3"></li>
-                  </ol>
-                   
-                  <!-- Carousel items -->
-                  <div class="carousel-inner">
-                  <?php
-					for ($i = 1; $i <= 4; $i++)
-					{
-						$activeState = '';
-
-						if ($i < 2)
-						{
-							$activeState .= 'active';
-						}
-
-						?>
-                	  	<div class="item <?php echo $activeState?>">
-                      <div class="row">
-                        <div class="col-md-4"><a href="#" class="thumbnail"><img src="images/michelle.png" alt="Michelle Obama and students" style="max-width:100%;"><p class="posted">Post on: 06/01/2017</p><p class="newsContent">
-                        Michelle Obama's 'amazing' impact on British schoolgirls  
-
-                        </p></a></div>
-                        <div class="col-md-4">
-
-                       <a href="#" class="thumbnail"><img src="images/michelle.png" alt="Michelle Obama and students" style="max-width:100%;"><p class="posted">Post on: 06/01/2017</p><p class="newsContent">
-                        Michelle Obama's 'amazing' impact on British schoolgirls  
-
-                        </p></a></div>
-                        <div class="col-md-4"><a href="#" class="thumbnail"><img src="images/michelle.png" alt="Michelle Obama and students" style="max-width:100%;"><p class="posted">Post on: 06/01/2017</p><p class="newsContent">
-                        Michelle Obama's 'amazing' impact on British schoolgirls  
-
-                        </p></a></div>
-    
-                      </div><!--.row-->
-                		</div><!--.item-->
-   						<?php	                
-					}
-                  ?>    
-                  
-                   
-                  </div><!--.carousel-inner-->
-                    <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-                    <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
-                  </div><!--.Carousel-->
-                   
-          </div>
-      </div>
-  </div><!--.container-->  
-  
-</article>
+	<article class="news"><!-- news article -->
+		<h1 class="newsTitle">News</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="Carousel" class="carousel slide">
+						<ol class="carousel-indicators">
+						<li data-target="#Carousel" data-slide-to="0" class="active"></li>
+						<li data-target="#Carousel" data-slide-to="1"></li>
+						<li data-target="#Carousel" data-slide-to="2"></li>
+						</ol>
+							<div class="carousel-inner"><!-- Carousel items -->
+							<?php include 'carouselLoop.php';?>	<!-- Loops the news carousel -->
+							</div><!--.carousel-inner-->
+							<a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+							<a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+					</div><!--.Carousel-->
+				</div><!-- col-md-12 -->
+			</div> <!-- row -->
+		</div><!--.container-->  
+	</article>
 
 
 <article class="calender">
-		
-
+	
 </article>
 <!-- end test -->
 			<!-- News Carousel -->					<!-- Calender Carousel -->
