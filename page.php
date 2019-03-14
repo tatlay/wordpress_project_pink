@@ -41,37 +41,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php endwhile; // end of the loop. ?>
 
 			</main><!-- #main -->
-	<article class="news"><!-- news article -->
-		<h1 class="newsTitle">News</h1>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div id="Carousel" class="carousel slide">
-						<ol class="carousel-indicators">
-						<li data-target="#Carousel" data-slide-to="0" class="active"></li>
-						<li data-target="#Carousel" data-slide-to="1"></li>
-						<li data-target="#Carousel" data-slide-to="2"></li>
-						</ol>
-							<div class="carousel-inner"><!-- Carousel items -->
-							<?php include 'carouselLoop.php';?>	<!-- Loops the news carousel -->
-							</div><!--.carousel-inner-->
-							<a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-							<a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
-					</div><!--.Carousel-->
-				</div><!-- col-md-12 -->
-			</div> <!-- row -->
-		</div><!--.container-->  
-	</article>
 
+<?php include 'carouselLoop.php';?>	<!-- Loops the news carousel -->
 
-<article class="calender">
-	
+<article class="Calender">
+
+<?php include 'carouselCalender.php';?>	<!-- Loops the calender carousel -->
+
 </article>
-<!-- end test -->
-			<!-- News Carousel -->					<!-- Calender Carousel -->
-			<!-- Twitter  Carousel -->
 
-		<div class="pink_twitter_container">
+
+
+
+<article class="twitter_section">
+			<div class="pink_twitter_container">
 		<!-- shortcode for twitter feed -->
 		<?php echo do_shortcode("[rotatingtweets screen_name='@develop_me_uk']"); ?>
 		</div><!--.container-->
@@ -80,6 +63,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</div><!-- .row -->
 
 	</div><!-- #content -->
+</article>
+<!-- end test -->
+			<!-- News Carousel -->					<!-- Calender Carousel -->
+			<!-- Twitter  Carousel -->
+
+
+
 <script>
     $(document).ready(function() {
         $('#Carousel').carousel({

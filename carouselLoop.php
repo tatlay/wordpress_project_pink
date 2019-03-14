@@ -1,4 +1,17 @@
 
+<article class="news"><!-- news article -->
+	<h1 class="newsTitle">News</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="Carousel" class="carousel slide">
+					<ol class="carousel-indicators">
+					<li data-target="#Carousel" data-slide-to="0" class="active"></li>
+					<li data-target="#Carousel" data-slide-to="1"></li>
+					<li data-target="#Carousel" data-slide-to="2"></li>
+					</ol>
+						<div class="carousel-inner"><!-- Carousel items -->
+
 <?php
 									for ($i = 1; $i <= 3; $i++):
 									
@@ -45,3 +58,11 @@
 										<?php	                
 										endfor;
 										?>
+							</div><!--.carousel-inner-->
+							<a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+							<a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+					</div><!--.Carousel-->
+				</div><!-- col-md-12 -->
+			</div> <!-- row -->
+		</div><!--.container-->  
+</article>
