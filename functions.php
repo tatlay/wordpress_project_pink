@@ -34,3 +34,41 @@ foreach ( $understrap_includes as $file ) {
 	}
 	require_once $filepath;
 }
+
+add_action('init','event_CPT');
+
+function event_CPT(){
+	$labels = array(
+		'name' => 'Events',
+		'singular_name' => 'Event',
+		'add_new' => 'Add New',
+		'add_new_item' => 'Add New Event',
+		'edit_item' => 'Edit Event',
+		//'new_item' => 'New Event',
+		'view_item' => 'View Event',
+		'search_items' => 'Search Events',
+		'not_found' => 'No events found',
+		'not_found_in_trash' => 'No events found in Trash',
+		'parent_item_colon' => '',
+
+	);
+	
+	$args = array(
+		'label' => __('Events'),
+		'labels' => $labels, // from array above
+		'public' => true,
+		'can_export' => true,
+		'show_ui' => true,
+		'_builtin' => false,
+		'capability_type' => 'post',
+		'menu_icon' => 'dashicons-calendar', // from this list
+		'hierarchical' => false,
+		'rewrite' => array( "slug" => "events" ), // defines URL base
+		'supports'=> array('title', 'thumbnail', 'editor', 'excerpt'),
+		'show_in_nav_menus' => true,
+		'taxonomies' => array( 'event_category', 'post_tag') // own categories
+
+	);
+
+	register_post_type('events', $args); // used as internal identifier
+}

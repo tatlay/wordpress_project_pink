@@ -12,6 +12,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>

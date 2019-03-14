@@ -25,8 +25,8 @@
                     <?php
                       
                         $query_args = array(
-                        'category_name' => 'calender',
-                        'post_type' => 'post',
+
+                        'post_type' => 'events',
                         'posts_per_page' => 4,
                         'orderby' => 'meta_value', //takes a value from the custom field below
                         'meta_key' => 'date',
@@ -42,12 +42,16 @@
                           <div class="col-md-3"><h1 class="largeCalender">
                             <?php 
                               $rawDay = get_field( 'date' );    
+                              //var_dump($rawDay);
                               $day = strtotime($rawDay);
                               $newformat = date('j', $day);
                               echo $newformat;
+
+
                             ?>  
                           </h1>
                             <h3>
+                             
                             <?php 
                               $rawMonth = get_field( 'date' );    
                               $month = strtotime($rawMonth);
@@ -57,12 +61,25 @@
                             </h3>
                             <div class="purpleCircle"></div>
                             <ul>
-                                          <li><?php the_title( );
-                               ?>
+                                          <li><?php the_title();
+                                          ?>
                                           </li>
-                                          <time class="time"> &#128344; <?php the_field( 'start_time' );?>
-                                          -<?php the_field( 'end_time' );?>
-                                               
+                                          <time class="time"> &#128344;  
+
+
+<?php if( have_rows('events') ): ?>
+ 
+    <ul>
+ 
+    <?php while( have_rows('events') ): the_row(); ?>
+ 
+   <li><?php the_sub_field('title'); ?><br/>
+   <?php the_sub_field('start_time'); ?> - <?php the_sub_field('end_time'); ?></li>
+    <?php endwhile; ?>
+ 
+    </ul>
+ 
+<?php endif; ?>
                                           </time>
 
                                       </ul>
