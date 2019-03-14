@@ -44,33 +44,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php include 'carouselLoop.php';?>	<!-- Loops the news carousel -->
 <?php include 'carouselCalender.php';?>	<!-- Loops the Calender carousel -->
+<?php include 'pink_twitter_section.php';?>	<!-- Loops the Calender carousel -->
 
-
-
-</article>
-
-
-
-
-<article class="twitter_section">
-			<div class="pink_twitter_container">
-		<!-- shortcode for twitter feed -->
-		<?php echo do_shortcode("[rotatingtweets screen_name='@develop_me_uk']"); ?>
-		</div><!--.container-->
-
-
-		</div><!-- .row -->
-
-	</div><!-- #content -->
-</article>
-<!-- end test -->
-			<!-- News Carousel -->					<!-- Calender Carousel -->
-			<!-- Twitter  Carousel -->
-
-
-
- 
-
-</div><!-- #page-wrapper -->
 
 <?php get_footer(); ?>
