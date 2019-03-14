@@ -43,10 +43,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</main><!-- #main -->
 
 <?php include 'carouselLoop.php';?>	<!-- Loops the news carousel -->
+<?php include 'carouselCalender.php';?>	<!-- Loops the Calender carousel -->
 
-<article class="Calender">
 
-<?php include 'carouselCalender.php';?>	<!-- Loops the calender carousel -->
 
 </article>
 
@@ -70,14 +69,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 
-<script>
-    $(document).ready(function() {
-        $('#Carousel').carousel({
-            interval: 0
-    })
-  });
-
-</script>
+ 
 
 </div><!-- #page-wrapper -->
 

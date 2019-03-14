@@ -66,3 +66,12 @@
 			</div> <!-- row -->
 		</div><!--.container-->  
 </article>
+
+<script>
+    $(document).ready(function() {
+        $('#Carousel').carousel({
+            interval: 0
+    })
+  });
+
+</script>
