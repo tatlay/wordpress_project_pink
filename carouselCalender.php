@@ -1,5 +1,4 @@
 <article class="Calender">
-
 <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -11,10 +10,8 @@
           <li data-target="#Karousel" data-slide-to="3"></li>
           </ol>
             <div class="carousel-inner"><!-- Carousel items -->
-
 <?php
                   for ($i = 1; $i <= 3; $i++):
-                  
                     $activeState = '';
                     if ($i < 2)
                   {
@@ -23,9 +20,7 @@
                 ?>
                   <div class="item <?php echo $activeState?>">
                     <?php
-                      
                         $query_args = array(
-
                         'post_type' => 'events',
                         'posts_per_page' => 4,
                         'orderby' => 'meta_value', //takes a value from the custom field below
@@ -46,52 +41,41 @@
                               $day = strtotime($rawDay);
                               $newformat = date('j', $day);
                               echo $newformat;
-
-
                             ?>  
                           </h1>
                             <h3>
-                             
-                            <?php 
-                              $rawMonth = get_field( 'date' );    
-                              $month = strtotime($rawMonth);
-                              $newformat = date('F', $month);
-                              echo $newformat;
-                            ?>
+                              <?php 
+                                $rawMonth = get_field( 'date' );    
+                                $month = strtotime($rawMonth);
+                                $newformat = date('F', $month);
+                                echo $newformat;
+                              ?>
                             </h3>
-                            <div class="purpleCircle"></div>
-                            <ul>
-                                          <li><?php the_title();
-                                          ?>
-                                          </li>
-                                          <time class="time"> &#128344;  
-
-
-<?php if( have_rows('events') ): ?>
- 
-    <ul>
- 
-    <?php while( have_rows('events') ): the_row(); ?>
- 
-   <li><?php the_sub_field('title'); ?><br/>
-   <?php the_sub_field('start_time'); ?> - <?php the_sub_field('end_time'); ?></li>
-    <?php endwhile; ?>
- 
-    </ul>
- 
-<?php endif; ?>
-                                          </time>
-
-                                      </ul>
-                          </div> <!-- col-md-4 -->
-                          <?php 
-                            endwhile;
-                            wp_reset_query();
-                            endif; //closes the conditional statement
-                          ?>
-                          
+                            <div class="purpleCircle">
+                            <!-- empty -->  
+                            </div>
+                              <ul>                              
+                                  <?php if( have_rows('events') ):
+                                            while( have_rows('events') ): the_row(); ?>
+                                       
+                                  <li>
+                                    <?php the_sub_field('title'); ?><br/>
+                                    
+                                  <time class="time"> &#128344;  
+                                            <?php the_sub_field('start_time'); ?> - <?php the_sub_field('end_time');?></br>
+                                            <?php
+                                          endwhile;
+                                    endif; ?>
+                                  </time>
+                                  </li>
+                              </ul>
+                            </div> <!-- col-md-4 -->
+                            <?php 
+                              endwhile;
+                              wp_reset_query();
+                              endif; //closes the conditional statement
+                            ?>
                         </div> <!-- row --> 
-                      
                   </div><!--.item-->      
                     <?php                 
                     endfor;
